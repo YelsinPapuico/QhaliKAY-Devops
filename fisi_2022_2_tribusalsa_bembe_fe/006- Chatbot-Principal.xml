@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ll_layout_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#57CC3A"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight=".5"
+            android:background="@drawable/boton_redondo"
+            android:backgroundTint="#B0EF9A"
+            android:hint="@string/escriba_aqui"
+            android:inputType="textShortMessage"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColorHint="#33691E"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/boton_redondo"
+            android:backgroundTint="#264653"
+            android:text="@string/enviar"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_messages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_layout_bar"
+        android:layout_below="@+id/dark_divider"
+        android:background="#B0EF9A"
+        tools:itemCount="20"
+        tools:listitem="@layout/message_item" />
+
+    <LinearLayout
+        android:id="@+id/dark_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentTop="true"
+        android:background="#57CC3A"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/butt0"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:layout_weight="0"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/abc_vector_test"
+            android:minHeight="48dp"
+            android:text="@string/men"
+            android:textAlignment="viewStart"
+            android:textColor="#37474F"
+            tools:ignore="TouchTargetSizeCheck" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="0.1"
+            android:contentDescription="@string/avatar"
+            android:cropToPadding="true"
+            android:maxWidth="0dp"
+            app:srcCompat="@drawable/avatar_png_picture"
+            tools:ignore="ImageContrastCheck" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
